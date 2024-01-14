@@ -1,0 +1,257 @@
+{
+	"info": {
+		"_postman_id": "ff94ea0b-3c1c-4441-868b-d15824915bb6",
+		"name": "reqres.in API Testing Pre-requestScript",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32205605"
+	},
+	"item": [
+		{
+			"name": "Req Folder",
+			"item": [
+				{
+					"name": "GET_REQUEST",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"console.log(\"Pre-request Script at request level\")\r",
+									"\r",
+									"// Local Variables\r",
+									"pm.variables.set(\"url_local\", \"https://reqres.in\");\r",
+									"\r",
+									"// Global Variable\r",
+									"pm.globals.set(\"userid_global\", \"2\")\r",
+									"\r",
+									"// Environment Variable\r",
+									"pm.environment.set(\"userid_req_env\", \"2\")\r",
+									"\r",
+									"// Collection Variables\r",
+									"pm.collectionVariables.set(\"userid_collection\", \"2\")"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"console.log(\"Tests Script at request level\")\r",
+									"\r",
+									"// printing variable in console\r",
+									"console.log(pm.variables.get(\"url_local\"))\r",
+									"\r",
+									"// Local Variables\r",
+									"pm.variables.unset(\"url_local\", \"https://reqres.in\");\r",
+									"\r",
+									"// Global Variable\r",
+									"pm.globals.unset(\"userid_global\")\r",
+									"\r",
+									"// Environment Variable\r",
+									"pm.environment.unset(\"userid_req_env\")\r",
+									"\r",
+									"// Collection Variables\r",
+									"pm.collectionVariables.unset(\"userid_collection\")"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url_local}}/api/users?page={{userid_global}}",
+							"host": [
+								"{{url_local}}"
+							],
+							"path": [
+								"api",
+								"users"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "{{userid_global}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET_REQUEST 2",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"console.log(\"Pre-request Script at request level\")"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"console.log(\"Tests Script at request level\")"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url_collection}}/api/users?page=2",
+							"host": [
+								"{{url_collection}}"
+							],
+							"path": [
+								"api",
+								"users"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST_REQUEST",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"name\": \"shuvo\",\r\n\t\"job\": \"QA\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://reqres.in/api/users",
+							"protocol": "https",
+							"host": [
+								"reqres",
+								"in"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT_REQUEST",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"name\": \"shuvo\",\r\n\t\"job\": \"engineer\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://reqres.in/api/users/74",
+							"protocol": "https",
+							"host": [
+								"reqres",
+								"in"
+							],
+							"path": [
+								"api",
+								"users",
+								"74"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE_REQUEST",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://reqres.in/api/users/74",
+							"protocol": "https",
+							"host": [
+								"reqres",
+								"in"
+							],
+							"path": [
+								"api",
+								"users",
+								"74"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"console.log(\"Pre-request Script at folder level\")"
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"console.log(\"Tests Script at folder level\")"
+						]
+					}
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"console.log(\"Pre-request Script at collection level\")"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"console.log(\"Tests Script at collection level\")"
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url_collection",
+			"value": "https://reqres.in",
+			"type": "string"
+		}
+	]
+}
