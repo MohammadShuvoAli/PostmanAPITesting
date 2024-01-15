@@ -1,16 +1,6 @@
 {
   "students": [
     {
-      "id": "1",
-      "name": "Shuvo",
-      "location": "Bangladesh",
-      "phone": "1234567890",
-      "Courses": [
-        "Java",
-        "Selenium"
-      ]
-    },
-    {
       "id": "2",
       "name": "Kim",
       "location": "US",
@@ -28,6 +18,16 @@
       "Courses": [
         "C#",
         "RestAPI"
+      ]
+    },
+    {
+      "id": "2efe",
+      "name": "Kenechi",
+      "location": "Japan",
+      "phone": "9361078560",
+      "Courses": [
+        "Rust",
+        "Cypress"
       ]
     }
   ]
