@@ -1,0 +1,78 @@
+{
+	"info": {
+		"_postman_id": "7c0cc087-451e-48e2-a81f-ac607126ea30",
+		"name": "File Upload API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32205605"
+	},
+	"item": [
+		{
+			"name": "Single File Upload",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/Shuvo/OneDrive - American International University-Bangladesh/GitHub/PostmanAPITesting/File Upload/Sample Test File 1.txt"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/uploadFile",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"uploadFile"
+					],
+					"query": [
+						{
+							"key": "file",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Multiple File Upload",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "files",
+							"type": "file",
+							"src": [
+								"/C:/Users/Shuvo/OneDrive - American International University-Bangladesh/GitHub/PostmanAPITesting/File Upload/Sample Test File 1.txt",
+								"/C:/Users/Shuvo/OneDrive - American International University-Bangladesh/GitHub/PostmanAPITesting/File Upload/Sample Test File 2.txt"
+							]
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/uploadMultipleFiles",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"uploadMultipleFiles"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
